@@ -43,7 +43,16 @@ export default function App() {
 
   // Dopóki nie ma logowania, nie renderujemy treści ani zdjęć.
   if (!authed) {
-    return <LoginScreen onSuccess={() => setAuthed(true)} />;
+    return (
+      <LoginScreen
+        onSuccess={() => {
+          // iOS przewija stronę przy klawiaturze; po zalogowaniu wracamy na górę
+          (document.activeElement as HTMLElement | null)?.blur();
+          window.scrollTo(0, 0);
+          setAuthed(true);
+        }}
+      />
+    );
   }
 
   return (
