@@ -33,13 +33,19 @@ export default function App() {
 
       <div className="page">
         <header className="header">
-          <div className="container header__inner">
-            <span className="logo">Nazwa firmy</span>
-            <nav>
-              <a href="#oferta">Oferta</a>
-              <a href="#konfigurator">Konfigurator</a>
-              <a href="#kontakt">Kontakt</a>
-            </nav>
+          <img
+            className="banner"
+            src={`${base}images/header.png`}
+            alt="Ubezpieczenia — Marek Danilczyk, Hubert Danilczyk"
+          />
+          <div className="navbar">
+            <div className="container navbar__inner">
+              <nav>
+                <a href="#oferta">Oferta</a>
+                <a href="#konfigurator">Konfigurator</a>
+                <a href="#kontakt">Kontakt</a>
+              </nav>
+            </div>
           </div>
         </header>
 

@@ -71,7 +71,14 @@ a {
   padding: 0 1.25rem;
 }
 
-.header {
+.banner {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Pasek menu przyklejony u góry przy przewijaniu */
+.navbar {
   position: sticky;
   top: 0;
   background: rgba(20, 70, 45, 0.75);
@@ -79,25 +86,21 @@ a {
   z-index: 10;
 }
 
-.header a {
+.navbar a {
   color: #fff;
+  font-weight: 600;
 }
 
-.header__inner {
+.navbar__inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  height: 64px;
+  height: 56px;
 }
 
-.header nav {
+.navbar nav {
   display: flex;
   gap: 1.5rem;
-}
-
-.logo {
-  font-weight: 700;
-  color: #fff;
 }
 
 /* Sekcja główna: tekst na dole, żeby nie zasłaniać twarzy na zdjęciach */
