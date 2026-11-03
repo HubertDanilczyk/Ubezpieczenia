@@ -45,6 +45,20 @@ a {
   animation: slide-down-fade-in 1.6s ease-out both;
 }
 
+/* Na telefonach tylko łagodne pojawienie się, bez przesuwania treści pod baner */
+@media (max-width: 767px) {
+  @keyframes slide-down-fade-in {
+    from {
+      opacity: 0.08;
+      transform: none;
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
 /* Nieruchomy nagłówek: baner + pasek menu */
 .header {
   position: fixed;
