@@ -1,0 +1,103 @@
+:root {
+  --primary: #1f5fa8;
+  --text: #1d2733;
+  --muted: #5b6675;
+  --bg: #ffffff;
+  --surface: #f3f6fa;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.header {
+  border-bottom: 1px solid #e3e8ef;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 10;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.header nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.logo {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.hero {
+  padding: 5rem 0;
+  background: var(--surface);
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0 0 1rem;
+}
+
+.section {
+  padding: 3.5rem 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  padding: 1.5rem;
+  border: 1px solid #e3e8ef;
+  border-radius: 12px;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.footer {
+  border-top: 1px solid #e3e8ef;
+  padding: 2rem 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
