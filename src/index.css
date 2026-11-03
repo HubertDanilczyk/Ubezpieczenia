@@ -2,11 +2,10 @@
   --primary: #2e7d4f;
   --primary-dark: #1f5c39;
   --text: #17261d;
-  --muted: #5a6b61;
-  --bg: #ffffff;
-  --surface: #eef7f1;
+  --muted: rgba(255, 255, 255, 0.85);
+  --bg: #1f5c39;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  color: var(--text);
+  color: #fff;
   background: var(--bg);
   line-height: 1.5;
 }
@@ -37,7 +36,33 @@ a {
 }
 
 .page {
+  position: relative;
   animation: slide-down-fade-in 1.6s ease-out both;
+}
+
+/* Stałe tło: zdjęcia zajmują cały ekran podczas przewijania */
+.site-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.site-bg__photo {
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.site-bg__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(31, 92, 57, 0.55) 0%,
+    rgba(31, 92, 57, 0.7) 100%
+  );
 }
 
 .container {
@@ -47,11 +72,15 @@ a {
 }
 
 .header {
-  border-bottom: 1px solid #d5e6da;
   position: sticky;
   top: 0;
-  background: var(--bg);
+  background: rgba(20, 70, 45, 0.75);
+  backdrop-filter: blur(6px);
   z-index: 10;
+}
+
+.header a {
+  color: #fff;
 }
 
 .header__inner {
@@ -68,50 +97,21 @@ a {
 
 .logo {
   font-weight: 700;
-  color: var(--primary-dark);
+  color: #fff;
 }
 
-/* Tło: dwa zdjęcia obok siebie + zielona nakładka dla czytelności tekstu */
+/* Sekcja główna: tekst na dole, żeby nie zasłaniać twarzy na zdjęciach */
 .hero {
-  position: relative;
   min-height: 600px;
   display: flex;
   align-items: flex-end;
   text-align: center;
-  color: #fff;
-  overflow: hidden;
-  background: var(--primary-dark);
-}
-
-.hero__photos {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.hero__photo {
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-}
-
-.hero__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(31, 92, 57, 0) 0%,
-    rgba(31, 92, 57, 0.15) 40%,
-    rgba(31, 92, 57, 0.85) 75%,
-    rgba(31, 92, 57, 0.92) 100%
-  );
 }
 
 .hero__content {
-  position: relative;
   width: 100%;
   padding: 3rem 0 3.5rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
 .hero h1 {
@@ -122,20 +122,16 @@ a {
 .hero p {
   margin: 0 auto;
   max-width: 560px;
-  opacity: 0.95;
 }
 
 .hero .button {
   background: #fff;
   color: var(--primary-dark);
+  text-shadow: none;
 }
 
 .section {
   padding: 3.5rem 0;
-}
-
-.section--tinted {
-  background: var(--surface);
 }
 
 .cards {
@@ -146,10 +142,11 @@ a {
 
 .card {
   padding: 1.5rem;
-  border: 1px solid #d5e6da;
   border-top: 4px solid var(--primary);
   border-radius: 12px;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--text);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
 }
 
 .button {
@@ -167,8 +164,9 @@ a {
 }
 
 .footer {
-  border-top: 1px solid #d5e6da;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   padding: 2rem 0;
   color: var(--muted);
   font-size: 0.875rem;
+  background: rgba(20, 70, 45, 0.6);
 }
