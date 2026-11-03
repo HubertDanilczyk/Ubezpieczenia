@@ -96,7 +96,7 @@ a {
 
 .navbar__inner {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   height: var(--navbar-h);
 }
