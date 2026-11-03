@@ -18,8 +18,15 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
+  /* Blokuje przewijanie w poziomie, nawet gdy któryś element jest za szeroki */
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
 }
 
 a {
