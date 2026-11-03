@@ -18,7 +18,25 @@ const base = import.meta.env.BASE_URL;
 export default function App() {
   return (
     <>
-      {/* Stałe tło na całej stronie: dwa zdjęcia obok siebie */}
+      {/* Nieruchomy baner i pasek menu u góry */}
+      <header className="header">
+        <img
+          className="banner"
+          src={`${base}images/header.jpg`}
+          alt="Ubezpieczenia — Marek Danilczyk, Hubert Danilczyk"
+        />
+        <div className="navbar">
+          <div className="container navbar__inner">
+            <nav>
+              <a href="#oferta">Oferta</a>
+              <a href="#konfigurator">Konfigurator</a>
+              <a href="#kontakt">Kontakt</a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      {/* Stałe tło ze zdjęciami, pod banerem */}
       <div className="site-bg" aria-hidden="true">
         <div
           className="site-bg__photo"
@@ -32,23 +50,6 @@ export default function App() {
       </div>
 
       <div className="page">
-        <header className="header">
-          <img
-            className="banner"
-            src={`${base}images/header.png`}
-            alt="Ubezpieczenia — Marek Danilczyk, Hubert Danilczyk"
-          />
-          <div className="navbar">
-            <div className="container navbar__inner">
-              <nav>
-                <a href="#oferta">Oferta</a>
-                <a href="#konfigurator">Konfigurator</a>
-                <a href="#kontakt">Kontakt</a>
-              </nav>
-            </div>
-          </div>
-        </header>
-
         <main>
           <section className="hero">
             <div className="container hero__content">
