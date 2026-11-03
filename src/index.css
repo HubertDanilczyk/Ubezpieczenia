@@ -168,6 +168,28 @@ a {
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
 }
 
+/* Kafelki konfiguratora i kontaktu: krótsze, z wyśrodkowaną treścią */
+.card--tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 120px;
+  text-align: center;
+}
+
+.card--tile h3 {
+  margin: 0;
+}
+
+.card--tile p {
+  margin: 0.5rem 0 0;
+}
+
+.card--tile a {
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
 .button {
   display: inline-block;
   margin-top: 1.5rem;

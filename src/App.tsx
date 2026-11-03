@@ -17,6 +17,25 @@ const offers = [
   },
 ];
 
+const configurator = [
+  "Utwórz polisę na życie",
+  "Utwórz polisę komunikacyjną",
+  "Utwórz polisę na dom",
+];
+
+const contacts = [
+  {
+    label: "Numer telefonu",
+    value: "123 456 789",
+    href: "tel:+48123456789",
+  },
+  {
+    label: "Adres email",
+    value: "adres.testowy@gmail.com",
+    href: "mailto:adres.testowy@gmail.com",
+  },
+];
+
 const base = import.meta.env.BASE_URL;
 
 export default function App() {
@@ -89,14 +108,29 @@ export default function App() {
           <section id="konfigurator" className="section">
             <div className="container">
               <h2>Konfigurator polisy</h2>
-              <p className="muted">Wkrótce. Tutaj pojawi się konfigurator.</p>
+              <div className="cards">
+                {configurator.map((item) => (
+                  <article key={item} className="card card--tile">
+                    <h3>{item}</h3>
+                  </article>
+                ))}
+              </div>
             </div>
           </section>
 
           <section id="kontakt" className="section">
             <div className="container">
               <h2>Kontakt</h2>
-              <p>Dane kontaktowe do uzupełnienia.</p>
+              <div className="cards">
+                {contacts.map((contact) => (
+                  <article key={contact.label} className="card card--tile">
+                    <h3>{contact.label}</h3>
+                    <p>
+                      <a href={contact.href}>{contact.value}</a>
+                    </p>
+                  </article>
+                ))}
+              </div>
             </div>
           </section>
         </main>
