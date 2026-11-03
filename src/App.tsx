@@ -1,3 +1,7 @@
+import { useState } from "react";
+import LoginScreen from "./LoginScreen";
+import { isLoggedIn } from "./auth";
+
 const offers = [
   {
     title: "Ubezpieczenie komunikacyjne",
@@ -16,6 +20,13 @@ const offers = [
 const base = import.meta.env.BASE_URL;
 
 export default function App() {
+  const [authed, setAuthed] = useState(isLoggedIn);
+
+  // Dopóki nie ma logowania, nie renderujemy treści ani zdjęć.
+  if (!authed) {
+    return <LoginScreen onSuccess={() => setAuthed(true)} />;
+  }
+
   return (
     <>
       {/* Nieruchomy baner i pasek menu u góry */}
